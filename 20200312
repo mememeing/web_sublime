@@ -1,11 +1,11 @@
 >>Gettin started
 
 1.
- install free-ware cooding program
+install free-ware cooding program
 www.sublimetext.com/3
 
 2.
- set plug-in
+set plug-in
 when your installation of sublime is complete, get in and "ctrl+shift+p" to install "packasge control"
 
 then whenever you want to add plug-in
@@ -18,7 +18,7 @@ just remember
   color picker - to use this, "ctrl+c"
 
 3.
- setting after step 2
+setting after step 2
 
 (preference>package settings>side bar>settings user)
 {  "default_browser": "chrome"  }
@@ -35,15 +35,14 @@ just remember
    }   }  } } 
    
    
-   save each window with "ctrl+S"
-   and when it's over "ctrl+w" to exit the window
+*save each window with "ctrl+S" and when it's over "ctrl+w" to exit the window
    
    
-   4.
-   look for the right sid of botton of the sublime window, plaing text -> change it into HTML
-   
-   just "enter ! and tab" then html tag is ready.
-   
-   5.
-    준비느 다 끝났다! ㅋㅋ 반응형 웹코딩을 하자. 걍 저장하고 f12를 누르면 활용해서 브라우저에서 내 코드를 확인할수있다.
+4.
+look for the right sid of botton of the sublime window, plaing text -> change it into HTML
+just "enter ! and tab" then html tag is ready.
+
+
+5.
+준비는 다 끝났다! ㅋㅋ 반응형 웹코딩을 하자. 걍 저장하고 f12를 누르면 활용해서 브라우저에서 내 코드를 확인할수있다.
     
