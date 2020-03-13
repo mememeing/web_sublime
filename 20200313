@@ -1,0 +1,120 @@
+finallllyyyyyyyyy you're ready to make ui(user interface)
+
+1.
+must follow this instruction!! include this
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+
+
+then you'll get 
+------------------------------------
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>01_css를 활용한 반응형웹코딩</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	
+</body>
+</html>
+-------------------------------------
+
+2.
+diversity in sizing media-query
+
+ex.
+
+@media screen and (min-width: 1600px){  css 스타일 }
+@media screen and (min-width: 1280px) and (max-width: 1599px){  css 스타일 }
+@media screen and (min-width: 1024px) and (max-width: 1279px){  css 스타일 }
+@media screen and (min-width: 780px) and (max-width: 1023px){  css 스타일 }
+@media screen and (min-width: 640px) and (max-width: 779px){  css 스타일 }
+@media screen and (min-width: 480px) and (max-width:639px){  css 스타일 }
+@media screen and (max-width:479px){  css 스타일 }
+
+
+3.
+choose one
+
+/*디바이스 장치가 최소 1200 이상일 때 : large screen */
+@media (min-width: 1200px){
+html, body{background-color: purple}    }
+
+/*디바이스 장치가 최소 992 이상일 때 : small screen */   
+@media (min-width: 992px){
+    #wrap{width: 80%; }   }   
+
+/*디바이스 장치가 최소 768 이상일 때 : for tablet,smartphone */   
+@media (min-width:768px {
+    html, body{background-color: orange}
+    #content_wrap #content{font-size: 1.5em;}   }
+
+/*디바이스 장치가 최대 767 이하일 때 : for some smartphone */   
+@media (max-width:767px) {
+    html, body{background-color: pink}    
+    #content_wrap #content{font-size: 2em; }
+    nav ul li{width: 100%;}   } 
+
+
+4. basic structure<!DOCTYPE html>
+
+type "div#wrapper and tap" beneath <body>part. 
+
+	<div id="wrapper"></div>
+
+between these, put "header and tab" and name it 반응형웹
+under it, "nav>ul>li*5 and tab" so to make menu for 5 display setting
+(* 'ctrl+art and drag' may make your input in multiple places easier or just simply use li*5>{menu$} )
+    
+머릿말에 해당하는 부분을 header에 넣는데, 지금처럼 header 안에 nav가 형제로 있어도 되고
+혹은 'ctrl+x'로 잘라서 nav tag를 전부 * '드래그 후 ctrl를 누른상태에서 [ ] 를 쓰면' 안밖으로 들여/넣어쓰기가 가능하다
+안으로 넣어서 자식으로 만든다. 글구... div는 형제로 만들자.
+이 후 header가 끝난 곳에서 div.content>h2{반응형 웹은 미디어쿼릴을 사용하여 스타일링합니다.} 하고 tab. 
+그 아래 <p>lorem</p> 하고 </p>앞에 커서 놓고 텝하면 의미없는 단어를 30개 정도 뽑아줌.
+이렇게 해서 div라는 class 에 content를 뽑아냈다. 
+
+이제 탭이 느낌이 올텐데 div아래 footer와 탭, 바로 h1이란 태그를 쓰고 탭한다. 태그 안에는 걍 made by mememeing같은거 써주쟝ㅎㅎ
+
+
+--------------------------------------
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>01_css를 활용한 반응형웹코딩</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+      <h1>귀요미찌 사이트예용<h1/>
+			<nav>
+				<ul>
+					<li>menu1</li>
+					<li>menu2</li>
+					<li>menu3</li>
+					<li>menu4</li>
+					<li>menu5</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="content">
+			<h2>반응형 웹은 미디어쿼리을 사용하여 스타일링합니다.</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum mollitia tenetur necessitatibus provident molestias voluptatibus quia aperiam, aut cum? Minima reprehenderit molestiae voluptates dolorum doloribus maiores similique, temporibus magni illum!</p>		
+		</div>
+		<footer>
+			<h1>designed by jina</h1>
+		</footer>
+	</div>
+</body>
+</html>
+
+-----------------------------------------------
+
+까~~생각보다 귀여운 페이지가 완성되어따~~
+
+
+
