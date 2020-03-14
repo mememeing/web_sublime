@@ -80,8 +80,7 @@ IE로 접속했을때 IE최신표준모드로 렌더링하라는 뜻
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>    <![endif]-->
   </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <body>    <h1>Hello, world!</h1>
 
     <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -116,26 +115,195 @@ IE로 접속했을때 IE최신표준모드로 렌더링하라는 뜻
 </head>
 <body> 
 
-
-구조의 최상위 컨테이너 요소에서 해당요소의 스타일 확인
+cf. 구조의 최상위 컨테이너 요소에서 해당요소의 스타일 확인
 https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.css
+.
 
 5.
 
+구조의 최상위 컨테이너 요소 안쪽에 div.row로 행을 만든다.
+
+>> .row
+.container또는 .container-fluid 안에 .row로 행을 만든다.
+
+컨텐츠를 만들자... row라는 행을 만들어야한다. 이제부터 느낌을 믿어야한다... 횐님(회원님)을 믿는다.
+div.row then tab. between these, div.col-xs-12 then tab and enter what you have in mind
+
+-----------------------------일부다
+  <style>
+  	div{border:1px solid gray;}
+  </style>
+  </head>
+  <body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-xs-12">
+    			hello~my love mememeing~
+    		</div>
+    	</div>
+    </div>
+    <div class="container-fluid">
+    	<div class="row">
+    		<div class="col-xs-12">
+    			hello~my love mememeing~
+    		</div>
+    	</div>
+    </div>
+----------------------------------
+위와 달리 아래는 화면창이 가로로 쭉늘어나도 크기가 쭉 따라간다. 지금 보이는게 다라고 생각하는자는 발전은 못한다 이거예요..
+4에서 알려준 링크를 타고 들가도 되고 직접 부트스트랩 파일을 들가서 코드를 확인해보자.
+각각은 padding 이나 margin이 동일한데, 각각의 미디어쿼리(디바이스 사이즈)에서 고정폭갖는 소스코드도 보이지 않는다.
+
+사실 이런거 찾아봐도 허전함을 채우진 못했다.. 허전함의 원인은 무엇일까. 고민하는 시간을 가져보자.
+
+------------------------------------
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+    <title>부트스트랩 101 템플릿</title>
+
+    <!-- 부트스트랩 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--부트스트랩 테마스타일 파일 연결-->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+  	div{border:1px solid gray;}
+  </style>
+  </head>
+  <body>
+    <div class="container">
+    	<div class="row">
+    	div.col-xs-6{div.col}																
+    		</div>
+    	</div>
+    </div>
+    <div class="container-fluid">
+    	<div class="row">
+    	div.col-xs-6{div.col}
+    		</div>
+    	</div>
+    </div>
+
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+------------------------------------
+
+.
+.
+.
+행 안에는 열이 있다.. 이곤 이해할게 많으니까 이제부턴 머리를 써야헌다...
 
 
+>> .col-*-*
+.row 안에 .col-*-*로 열을 만듭니다. 첫번째 *에는 xs, sm, md, lg 중의 하나가, 두번째 *에는 1부터 12까지의 수 중의 하나가 들어간다.
+
+xs: 항상 적용
+sm: 가로 해상도 768px 이상
+md: 가로 해상도 922px 이상에서 적용
+lg: 가로 해상도 1200px이상에서 적<!DOCTYPE html>
+1-12: 행을 12등분하여 그 중 몇 개를 사용할 지 정함.
+
+.col-*-* 앞은 디바이스사이즈를 넣고, 두번쨰 별은 1-12까지 중 쓸 영역숫자를 써준다.
+
+.col-xs-3은 행의 3/12를 가로크기로 한다는 것.
+그롬 컴퓨터는 입력 합이 12보다 크면 어뜨케 처리할까... 두구두구.. >> 크면 다음줄로 넘어간다. 상상은 너굴맨이 해치워줄게!
 
 
+--------------------------------
+
+이번에는 맨 처음에 다운 받은 파일을 쓰지 않고 해보자. 맨 첨에 들어갔던 bootstrapk.com/getting-started/#download
+부트스트랩 사이트에서 다운로드 하단에 보이는 cdn 링크를 가져다 쓰면 된다! 와... 친절하게 가져왔다.
+
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+------------------------------------
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+    <title>부트스트랩 202 그리드구조</title>
+
+    <!-- 부트스트랩 -->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
 
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
 
+----------------------------------
 
+저 위 폴더 위치를 다운받지 않고 진행할수 있게 기본만 바꿔 본 틀이당. 이제 본문내용을 수정하자. 저기 헬로우월드
 
+div.container>div.row then tab (컨테이너 안에는 기본적으로 row필요)
+inside
+div.col-sm-6*2 then tab 쓰고 싶은거 쓰깅.
 
+------------------------------------
+  </head>
+  <body>
+    <div class="container">
+      <div class="col">
+        <div class="col-sm-6">유지나가 최고야</div>
+        <div class="col-sm-6">유지나가 최고야</div>
+      </div>
+    </div>
+-------------------------------------
 
+두번쨰니 알아서 하겠징. </head>상단에 style tab하자. 그 내부에 div{border:1px solid gray;} 주고.
+-------------------------------------
+    <style>
+      div{border:1px solid gray;}
+    </style>
+  </head>
+--------------------------------------
+f12로 확인해봐.ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ 눈물이 난다. 최고야..
+container를 썼기 때문에 왼쪽 오른쪽 공간이 보일텐데, 모니터를 줄여봐. container는 고저폭!을 갖고 있기떄문에 양단 사이드 여백이 줄어들다
+스마트폰 사이즈 767가 되었을때 12! 마법의 숫자가 된다. 그래서 다음줄로 넘어가지. 요거 기억해두자.
 
+sm md large는 스마트폰사이즈가 되면 무조건 12개를 가져가게 된다!?!
 
-
- 
- 
