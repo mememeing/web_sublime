@@ -24,4 +24,114 @@
 두 클래스 명의 차이는 왼쪽 오른쪽 공간간의 유무이겠죠. 꽉찬 형태로 만들어 보아요. 
 
 beneath body
-div.container-fluid then tab 클래스로 감
+'div.container-fluid' then tab 클래스로 감싸주고 inside it, 'div.row' then tab
+'div.col-xs-8+div.col-xs-4' then tab and name the text same with 
+  
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-8">col-xs-8</div>
+        <div class="col-xs-4">col-xs-4</div>
+      </div>
+    </div>
+
+보더 처리를 하지 않았기 떄문에 지금은 텍스트만 보인다. --> head 상단에 스타일을 추가한다.
+styl, tab, div{border:1px solid gray;}
+
+어제 배운거라서 짱쉽다. 이제부터 진짜 시작이다. class명을 더 추가하자.
+마 해보면 아알겠지만 스맛토폰에서까지 줄구분을 하하고 싶을때 xs을 넣어주면 되겠쥬.
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-8">col-sm-6 col-md-4 col-lg-8</div>
+        <div class="col-sm-6 col-md-8 col-lg-4">col-sm-6 col-md-8 col-lg-4</div>
+      </div>
+    </div>
+    
+
+
+이제~ 실습이닭~ 성공하고 치킨먹자~
+
+우선 container로 전체 구성박스를 감싸준다.
+그담에 가로로 된 줄을 만들어 주겠어용. 
+새로운 한줄이 들어갈때에는 div를 감싸고 각 행별로 row를 이용해서 그 안 각각의 요소가 12분의 몇을 차지할지 정한다.
+
+bootstrapk.com/css/#type 에서 탕이포글래피를 공부해보깡.ㅠ(ㅠ 노트북렉머엇어서 ㅇ일케 나옴)
+
+당신의 텍스트를 인라인으로 표시되면서 스타일만 제목 스타일로 맞추기 위해 .h1 부터 .h6 클래스 또한 사용 가능합니다.
+h1{lorem} tab하면 느낌알지? 각각해서 느낌 배워보지
+쭉 emmet으로 뽑아볼수도 있다. div.row>div.col-sm-4*3 안에 텍스트는 맘대로
+혹은 구조까지 뽑을수도 있다. div.row>div.col-sm-4*3>h1{lorem}
+
+위에 스타일있자나용. 
+구분선 넣으려며 div{border:1px solid gray;}
+아래 .row:nth-of-type(){} 를 해줘여.()요기 안에 ㅁ몇번쨰 요소라고 써주며노 돼여 {}안에는 할거 써주구요.
+colorpicker plug-in 설치했던거 기억나져? ctrl+shift+c.써서 나는 요로케 해줘써
+    .row:nth-of-type(1){background-color: #3EEBF0} 아주귀여운 치약색이얌
+
+-----------------------------------
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+    <title>직접짜는 반응형 웹</title>
+
+    <!-- 부트스트랩 -->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    div{border:1px solid gray;}
+    .row:nth-of-type(1){background-color: #3EEBF0}
+    .row:nth-of-type(2){background-color: #F314F5}
+    .row:nth-of-type(3){background-color: #54FA6F}
+    .row:nth-of-type(4){background-color: #D6E91A}
+  </style>
+  </head>
+  <body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>lorem</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <h1>ipsum</h1>
+      </div>
+      <div class="col-sm-4">
+        <h1>dolor</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"><h1>lorem</h1></div>
+      <div class="col-sm-4"><h1>lorem</h1></div>
+      <div class="col-sm-4"><h1>lorem</h1></div>
+    </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>lorem</h1>
+        </div>
+      </div>
+  </div>
+
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
+-----------------------------------
+
+스타일 말고도 또 꿀팁이 있다. 같은 태그(아래서 그냥 h1라고 했어두 바꿀수 있어여!!)인데 스타일을 주고 싶다면 클래스로 바꿀숟 있다.
+클래스명으로 한번 활용을 해보자. 동일하게 줘보는게 오떄. ctrl를 누른채로 <h1 요기에 커서를 쭉 놓고 원하는 동작을 쓴다.
+<h1 class="text-center"> 와~~!~! 굳굳
+
