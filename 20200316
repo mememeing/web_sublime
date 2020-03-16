@@ -1,0 +1,224 @@
+배운걸 복습해보자
+
+1. 해당요소가 <div class="col-xs-4 col-sm-6">와 같이 두 개의 클래스명을 가지고 있으면
+가로 해상도 767px이하에서는 col-xs-4가 적용되어 가로영역 4/12영역을 차지하는 레이아웃이 만들어지고
+768px이상에서는 col-sm-6 이  적용되어 가로영역 6/12 영역을 차지하는 레이아웃이 만들어진다
+2. 해당요소가 <div class="col-xs-8 col-md-6 col-md-4">와 같이 세 개의 클래스 명을 갖고 있으면
+작을떈 xs로 8/12. 그보다 클땐(768이상) sm-6이 적용되어 가로 6/12. 더 클(992이상)땐 md-4 ... 쓰기 힘들어짐
+
+오늘은 부트스트랩에서 제공하는 스타일을 활용하자.
+기능들이 궁금할때에는 cdn에서 min제거해서 확인
+
+
+>>bootstrapk.com/css/#type-list
+                     #images
+                     #hepler-classes  
+                     
+>>스타일없는
+항목에서 list-style과 좌칙 마진을 제거.
+이건 직접 자식항목(바로 아래 항목)에만 적용됩니다.
+그래서 중첩된 목록에도 ㄸ따로 클래스를 추가해야함.
+
+불렛이나 번호의 스타일이 없는 list-style:
+none과 왼쪽의 여백을 제거하는 스타일을 주려면
+ul이나 ol에 .list-unstyled 클래스명을 부여한다.
+
+ol>li*3>{내가좋아하는메뉴$} &tab
+ol은 순서대로 만든다.
+
+ul>li*3>{내가좋아하는색상$} &tab
+ul은 그냥 항목 점
+
+근데 둘다 없애고 싶으면 그냥 css style을 사용한다.
+헤드 상단에
+<style>
+	ol li, ul li{list-style: none;}
+</style>
+
+그런데 부트스트랩은 style 안쓰고 클래스명에서 변경해줄수도 있었지?
+	<ol class="list-unstyled">
+		<li>내가좋아하는음식1</li>
+		<li>내가좋아하는음식2</li>
+		<li>내가좋아하는음식3</li>
+	</ol>
+  
+
+>>그 다음은 이미지모양 관련 클래스명!
+해당요소의 꼭지점이 둥근 스탕일을 주려면 .img-rounded
+동그란 원을 만드느 스타일 .img-circle
+썸네일 형식의 스타일 .img-thumbnail
+
+https://placeholder.com/ 를 이용할건데 이로케~ 하면 된다.
+<body>
+	<img src="https://via.placeholder.com/150" alt="" class="">
+  
+
+>>헬퍼크래스
+-폰트 컬러 6가지
+.text-muted(회색) .text-primary(파랑) .text-success(초록)
+.text-info(회남색) .text-warning(노랑) .text-danger(빨강)
+
+일단 p*6으로 p태그를 6개해서 쓰고싶은거 해주고
+<p class="">lorem6</p> 요런느낌~으로 your클래스 추가하기
+
+-배경컬러를 지정하는 클래스명
+.bg-primary .bg-succeess .bg-info .bg-warning .bg-danger
+참 클래스는 띄어쓰기로 기능중첩이 가능하다. 확인해보자
+<p class="bg-primary text-muted">Lorem ipsum dolor sit amet.</p>
+
+
+>>디바이스마다 변하느 실무 웹페이지 레이아웃만들기(데스크탑)
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>반응형 웹페이지</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  </head>
+  <body>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
+기본적으로 갖다쓰고 탭은 생략해도 잘 따라와보자.
+
+1. 상단바 만들기
+div.container
+div.row
+div.bg-info.img-rounded>h1{studio jinawa}
+
+요즘엔 소문자가 갬-성이지만, 대문자를 원하면 <h1 class="text-upperclass">
+그리고 좀더 느낌를 위해 <h1 class="text-uppercase text-center text-muted">
+
+
+2.중간은 열 3개
+내용바를 2:10:2로 나눠줄건데
+
+- 좌측 내용
+div.row
+div.col-md-2.bg-danger
+ul>li*4>a[href="#"] 하고는
+
+<li><a href="#">요기에쓰고싶은거다해!</a></li> 
+글구 시행해보면 항목별 표시 있는데 이거 있음 촌스럽. 메모장같으니 없애줒주자
+<ul class="list-unstyled">
+
+- 중간 내용
+  </div>
+ </div> 요번엔 늘 이거 두개 위에 작성하는 거~ 잊지말구
+ 
+div.col-md-8.bg-warning
+p 태그하고 내용
+
+- 우측 메뉴바
+애도 마찬가지
+  </div>
+ </div> 두개 위에 작성하는 거
+div.col-md-2.bg-primary
+ul>li*4 쓰고픈거 써라~
+
+대충 모양이 나온다. 그런데 pc -> 타블렛 -> 스맛토폰 이렇게 액정을 대강 나눠본다면
+우리 테블레렛때는 중간을 3열로 만든게 소용없으니 2열+1줄로 가게 해주자.
+     <div class="col-md-2 bg-danger">
+     <div class="col-md-8 bg-warning">
+     <div class="col-md-2 bg-primary">
+     
+     <div class="col-md-2 bg-danger col-sm-6">
+     <div class="col-md-8 bg-warning col-sm-6">
+     <div class="col-md-2 bg-primary col-sm-12">
+이렇게 추가해주자. 사실 난 3번짼 12안 넣어도 될줄알았는데, 
+그렇게 되면 테블릿사이즈때 1,2가 3에 가려진다. 대박!
+
+근데 2의 좌측이 좀 짧게 느껴질것이다. 이부분도 보완해주자.
+bootstrap이라고 올려온 txt에서 @media를 검색해보면 이걸 발견할것이당.
+@media ( min-width: 768px){
+  .lead{font-size:21px;}
+}
+이게 타블렛사이즈다. 스타일을 추가해줄건데 타블렛에서만 적용가능하게 조건을 추가했다.
+일단 적용하고 싶은 애들의 클래스에 id="menu"를 더 추가해주자.
+난 2에 해줬따. <div class="col-md-2 bg-danger col-sm-6 img-rounded text-center id="menu">
+
+    <style>
+      @media (min-width: 768px) and (max-width: 991px){
+        #menu{height: 210px;}
+      }
+    </style>
+    
+
+다끝났다 이제
+
+3. 하단바
+</div>위에서 작업한다.
+div.row
+h3하고 쓰고픈거 쓰고
+<h3 class="text-center">
+
+
+     
+ ------------------------------
+ <!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>반응형 웹페이지</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <style>
+      @media (min-width: 768px) and (max-width:991px) {
+        #menu{
+          height:210px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="bg-info img-rounded">
+          <h1 class="text-uppercase text-center text-muted">studio jinawa</h1>
+        </div>
+      </div>
+      <div class="row">
+       <div class="col-md-2 bg-danger col-sm-6 img-rounded text-center" id="menu">
+          <ul class="list-unstyled">
+            <li><a href="#">독서</a></li>
+            <li><a href="#">운동</a></li>
+            <li><a href="#">공부</a></li>
+            <li><a href="#">음악</a></li>
+          </ul>
+        </div>
+        <div class="col-md-8 bg-warning col-sm-6 img-rounded">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quo, excepturi placeat dolor, incidunt beatae? Autem modi ratione reprehenderit ducimus dolorem hic, tempora provident, ab similique, qui a nostrum iure.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor reiciendis asperiores, quibusdam unde nobis rem aperiam magni eos illo magnam fuga maiores excepturi ad cupiditate. Officia eveniet facere nisi, ea!</p>
+        </div>
+        <div class="col-md-2 bg-primary col-sm-12 img-rounded text-center">
+          <ul class="list-unstyled">
+            <li>2017</li>
+            <li>2018</li>
+            <li>2019</li>
+            <li>2020</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <h3 class="text-center">made by jinawa 20200316</h3>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
+  ------------------------------
