@@ -163,18 +163,17 @@ h3하고 쓰고픈거 쓰고
 
 
      
- ------------------------------
- <!DOCTYPE html>
+------------------------------
+<!DOCTYPE html>
+
 <html lang="ko">
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>반응형 웹페이지</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
     <style>
       @media (min-width: 768px) and (max-width:991px) {
         #menu{
@@ -183,14 +182,18 @@ h3하고 쓰고픈거 쓰고
       }
     </style>
   </head>
+
   <body>
     <div class="container">
+
       <div class="row">
         <div class="bg-info img-rounded">
           <h1 class="text-uppercase text-center text-muted">studio jinawa</h1>
         </div>
       </div>
+
       <div class="row">
+    
        <div class="col-md-2 bg-danger col-sm-6 img-rounded text-center" id="menu">
           <ul class="list-unstyled">
             <li><a href="#">독서</a></li>
@@ -199,10 +202,14 @@ h3하고 쓰고픈거 쓰고
             <li><a href="#">음악</a></li>
           </ul>
         </div>
+
         <div class="col-md-8 bg-warning col-sm-6 img-rounded">
+
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quo, excepturi placeat dolor, incidunt beatae? Autem modi ratione reprehenderit ducimus dolorem hic, tempora provident, ab similique, qui a nostrum iure.</p>
+
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor reiciendis asperiores, quibusdam unde nobis rem aperiam magni eos illo magnam fuga maiores excepturi ad cupiditate. Officia eveniet facere nisi, ea!</p>
         </div>
+
         <div class="col-md-2 bg-primary col-sm-12 img-rounded text-center">
           <ul class="list-unstyled">
             <li>2017</li>
@@ -211,14 +218,17 @@ h3하고 쓰고픈거 쓰고
             <li>2020</li>
           </ul>
         </div>
+    
       </div>
+
       <div class="row">
         <h3 class="text-center">made by jinawa 20200316</h3>
       </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   </body>
-</html>
-  ------------------------------
+</html> 
+------------------------------
