@@ -1,0 +1,331 @@
+div.col-lg-6.bg-warning
+
+[그리드의 다양한 옵션] 
+>>prefix
+.col  - device prefix디바이스 크기 - 숫자
+
+
+>>>offset 요소 이동
+.col  - device prefix - offset  - 숫자
+<div class="col-md-4 col-md-offset-2">
+offset은 뒷요소들 이동에도 영향을 미치는 반면 push는 그 요소만 좌측으로 당기거나, pull로 우측으로 민다.
+
+>>nesting: .row안에 .row를 (계속해서)사용할수 있는 중첩구문
+.container
+    .row
+        .col-md-*
+            .row
+                .col-md-*
+                .col-md-*
+            .row
+                .col-md-*
+                
+한번 연습해보자. 이 레이아웃 띄어쓰기 엄청 이쁘게 잘됐당 ㅎㅎ
+
+       <div class="col-md-6 col-sm-6 img-rounded col-md-offset-1 col-sm-offset-2">
+          <div class="row">
+
+            <div class="col-lg-6 bg-success">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, ut.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, quis.</p>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="row">
+                
+                <div class="col-lg-12 bg-warning">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, minus.</p>
+                </div>
+                <div class="col-lg-12 bg-primary">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, deleniti.</p>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+
+-----------------------------------------
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-sm-6">
+          <div class="row">
+            <div class="col-lg-12 bg-warning ">
+              <h1 class="text-capitalize">title</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 bg-danger col-md-6">
+              <h1 class="text-capitalize">title</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+            </div>
+            <div class="col-lg-4 bg-danger col-md-6">
+              <h1 class="text-capitalize">title</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing </p>
+            </div>
+            <div class="col-lg-4 bg-danger col-md-12">
+              <h1 class="text-capitalize">title</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 bg-info col-sm-6" id="side">
+          <h1 class="text-capitalize">title</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+-----------------------------------------
+        
+
+
+[다양한테이블 스타일]
+bootkstrap.com/#tables 설명 완전 친절하다.. 이제 실습해야하므로 설명은 친절한 사이트참고..
+
+tr
+td: data
+th: title(header)
+
+tr*4>td*3>{data$}
+
+테이블의 height를 고정하고 싶으면(줄어들었을때 좌우로 스크롤 생김)
+<div class="table-responsive">를 table 상단에 만듦.
+
+    <div class="table-responsive">
+          <table class="table table-stripped table-bordered table-hover table-condensed">
+      <tr class="success">
+        <th>title1</th>
+        <th>title2</th>
+        <th>title3</th>
+      </tr>
+      <tr>
+        <td>data1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sint.</td>
+        <td class="info">data Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, ex.2</td>
+        <td>data3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, laboriosam.</td>
+      </tr>
+     </table>
+     </div>
+      
+      
+>>부트스트랩의 다양한 입력양식 스타일
+
+폼태그 스타일의 중요포인트
+1. 이벽창에 스타일을 주려면 form-group 클래스명에 has-스타일이름 클래스명에 넣어준다.
+2. 레이블태그에 class="control-lable"을 부여하면 form-group이 가지고 있는 스타일을 따라간다.
+3. 입입력칸에 아이콘을 붙이려면 input-goup으로 감싸고 그 안에 input-group-addon이라는 클래스명을 활용한다.
+4. red계열 스타일을 주려면 클래스명 has-error를 준다.
+
+bootkstrap.com/#forms 에서 배껴오자
+
+안해줘도 같지만,,,굳이 한다. 왜냐면
+div.container
+div.row
+div.col-xs-12 하고는 베낀거 붙여넣자
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">이메일 주소</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="이메일을 입력하세요">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">암호</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="암호">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">파일 업로드</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">여기에 블록레벨 도움말 예제</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> 입력을 기억합니다
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">제출</button>
+</form>
+
+엉엉 안쓰던 머리를 쓰려니까 부팅이 느리ㄷ ㅠㅠ 노력해야지 그냥 새련된 스타일 베껴옴.
+
+
+----------------------------
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>02_폼태그 스타일</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <form>
+            <div class="form-group has-success">
+              <label for="exampleInputEmail1" class="control-label">이메일 주소</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="이메일을 입력하세요">
+            </div>
+            <div class="form-group has-error">
+              <label for="exampleInputPassword1" class="control-label">암호</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="암호">
+            </div>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputGroupSuccess4">아이콘과 입력창</label>
+              <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" id="inputGroupSuccess4" aria-describedby="inputGroupSuccess4Status">
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+              <span id="inputGroupSuccess4Status" class="sr-only">(success)</span>
+            </div>
+            <div class="form-group has-warning">
+              <label for="exampleInputFile" class="control-label">파일 업로드</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">여기에 블록레벨 도움말 예제</p>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> 입력을 기억합니다
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">제출</button>
+          </form>
+          <form class="form-inline">
+            <div class="form-group has-success">
+              <label for="exampleInputEmail1" class="control-label">이메일 주소</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="이메일을 입력하세요">
+            </div>
+            <div class="form-group has-error">
+              <label for="exampleInputPassword1" class="control-label">암호</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="암호">
+            </div>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputGroupSuccess4">아이콘과 입력창</label>
+              <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" id="inputGroupSuccess4" aria-describedby="inputGroupSuccess4Status">
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+              <span id="inputGroupSuccess4Status" class="sr-only">(success)</span>
+            </div>
+            <div class="form-group has-warning">
+              <label for="exampleInputFile" class="control-label">파일 업로드</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">여기에 블록레벨 도움말 예제</p>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> 입력을 기억합니다
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">제출</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
+----------------------------
+두번째는 인라인을 사용해서 pc스크린: 한줄, 줄어들면 세줄로 바뀜
+
+
+
+-----------------------------
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>03_폼태그스타일_selfEX정답</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <style>
+      .container{
+        background-color: orange;
+        padding:50px 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container img-rounded">
+      <div class="row">
+        <div class="col-lg-12">
+          <form action="#">
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputGroupSuccess4">Email address</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-user"></span>
+                </span>
+                <input type="text" class="form-control" id="inputGroupSuccess4" aria-describedby="inputGroupSuccess4Status" placeholder="E-mail주소를 입력해주세요">
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+              <span id="inputGroupSuccess4Status" class="sr-only">이메일 주소를 넣어주세요</span>
+            </div>
+            <div class="form-group has-error has-feedback">
+              <label class="control-label" for="inputGroupSuccess4">Password</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-lock"></span>
+                </span>
+                <input type="text" class="form-control" id="inputGroupSuccess4" aria-describedby="inputGroupSuccess4Status" placeholder="비밀번호를 입력해주세요">
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+              <span id="inputGroupSuccess4Status" class="sr-only">이메일 주소를 넣어주세요</span>
+            </div>
+             <div class="form-group">
+              <label for="exampleInputFile">file input</label>
+              <input type="file" id="exampleInputFile">
+            </div>
+            <input type="submit" class="btn btn-default" value="submit"></input>
+          </form>
+          <form action="#" class="form-inline">
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputGroupSuccess4">Email </label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-user"></span>
+                </span>
+                <input type="text" class="form-control" id="inputGroupSuccess4" aria-describedby="inputGroupSuccess4Status" placeholder="E-mail주소">
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+              <span id="inputGroupSuccess4Status" class="sr-only">이메일 주소를 넣어주세요</span>
+            </div>
+            <div class="form-group has-error has-feedback">
+              <label class="control-label" for="inputGroupSuccess4">Password</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-lock"></span>
+                </span>
+                <input type="text" class="form-control" id="inputGroupSuccess4" aria-describedby="inputGroupSuccess4Status" placeholder="비밀번호">
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+              <span id="inputGroupSuccess4Status" class="sr-only">이메일 주소를 넣어주세요</span>
+            </div>
+             <div class="form-group">
+              <label for="exampleInputFile">file</label>
+              <input type="file" id="exampleInputFile">
+            </div>
+            <input type="submit" class="btn btn-default" value="submit"></input>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
