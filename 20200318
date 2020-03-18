@@ -1,0 +1,63 @@
+와 기록을해보니까 내가 정말 코*지만큼 공부한다는게 보인다. 분발해야겠당.
+안그래도 오늘 굥이한테 끌려나와서 방배토즈다...후..
+
+어제 복습. 폼
+
+bootstrapk홈페이지에서 폼>검사상태에서 배껴온다.
+
+<div class="form-group has-error has-feedback">
+  <label class="control-label" for="inputError2">Input with error</label>
+  <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+  <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+  <span id="inputError2Status" class="sr-only">(error)</span>
+</div>
+<div class="form-group has-success has-feedback">
+  <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+  <div class="input-group">
+    <span class="input-group-addon">@</span>
+    <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+  </div>
+  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+</div>
+
+(참고로 span은 음성안내 sr-only도.)
+
+div.container
+div.row
+div.col-lg-12
+div.form
+해서 <form action="#"> 일케 #써주고 배껴온거 붙여본나.
+
+그리고 스타일도 줄건데
+  <style>
+    .container{
+      background-color: orange;
+      padding: 50px 100px;}
+   </style>
+  
+시행해보고, 필요한 부분만 발췌하자.
+bootstrapk.com/components/ 들가서 귀여운것도 골라보자.
+
+
+            <div class="input-group">
+              <span class="input-group-addon">@</span>
+              <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+            </div>
+            
+두번쨰 줄을
+<span class="input-group-addon glyphicon glyphicon-user"></span>
+근데 아이콘이 간격이 잘 안맞는다면
+<span class="input-group-addon">
+  <span class="input-glyphicon-user"></span>
+</span>
+
+1. 부트스트랩에서는 다양한 테이블 스타일을 지원하는데 <table>태그에 약간의 패딩과 수평구분선이 있는 기본 그타일을 만드려면 .table클래스 추가
+2. 반응형 테이블을 만들려면 table태그를 div로 감싸고 .table-responsive클래스를 추가한다
+3. 입력창에 스타일을 주려면 form-group클래스명에 has-스타일이름 클래스명을 넣어준다.
+4. 레이블태그에 class="control-lable"을 부여하면 form-group이 가지고 있는 스타일을 따라간다.
+5. 인라인 형식의 폼스타일을 만들기위해서는 form태그에 .form-inline클래스명을 추가해준다.
+
+[다양한 버튼 스타일]
+a는 링크를 거는 태그
+
