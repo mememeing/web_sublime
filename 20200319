@@ -1,1 +1,72 @@
-한동안 web 멈출건데, 깃허브는 맨날 들어온다. ㅎ 일년동안 매일 출근도장찍을거양. 오늘부터 lynx 레파토리 참고~
+어제잠들지않아서하루를건너뛰디. 기본적인 이해중
+
+>> cmd & gui & editors 종류 기능
+
+>> 소스제어로 문서작성
+커밋 - 풀 - 푸시
+
+>>디버깅 nodejs
+계속/일시중지 F5
+단위실행 F10
+단계정보 F11
+단계출력 shift+F11 
+다시시작 ctrl+shift+F5
+중지 shift+F5
+
+>> vscode 테스크: 에디터에서 빌드
+
+ 1. 타입스크립트
+타입스크립는 빌드해서 -> 자바스크립트로 변환
+콘솔창에서 
+mkdir task-test  # task-test 폴더생성
+cd task-test     # task-test 폴더로 이동
+tsc --init       # tsconfig.json 생성
+code .           # vscode 열기
+
+class Startup {
+    public static main(): number {
+        console.log('Hello World');        return 0;
+    }
+}
+Startup.main();
+빌드단축키는 ctrl+shift+b & tsc 빌드 
+
+ 2. sass 파일 컴파일하기
+sass 파일을 컴파일하여 css 파일
+sass 파일을 컴파일하려면 node-sass 를 설치해야합니다.
+npm install -g node-sass
+
+ 3. sass 컴파일 자동화 (어렵다..못외움)
+ 자바스크립트, SASS, LESS, Markdown, TypeScript .... 등등 컴파일
+https://code.visualstudio.com/docs/languages/overview
+
+-------------------------
+
+ >> 원드라이브 동기화 해제
+아 근뎅 ;;; 원드라이브 연동때문에 뭔가 찝찝하다. 해제해주자. 나는 바탕화면이랑 문서가 연동되어있었다.
+
+문제는 문서에 vs studio폴더가 리디렉션 되어있단 점. 첫 바늘을 잘 꿰자 ㅠ
+그치만 나중에 나같은 친구를 도와줄수 있음. ㅋㅋ
+
+프로젝트 변경 : 도구 - 옵션 - 프로젝트 및 솔루션 - 위치 (vs2019 기준)
+그건 했는뎅 설치파일은 아마 안될것 같다. 동기화로 살아야한다. 나중에 노트북 힘들어하면 vs제거 해줄게.
+
+------------------------
+
+ >> 홈페이지 만들기
+
+원하는 레지스토리에서 git bash here시작.
+
+번들러 설치
+bundle init
+bundle install --path vendor/bundle
+bundle add jekyll
+bundle exec jekyll new --force --skip-bundle .
+bundle install
+
+index.html 내용 넣고 싶은거 넣어 만들고
+bundle exec jekyll serve
+
+http://localhost:4000/ 확인
+ 
+ 
