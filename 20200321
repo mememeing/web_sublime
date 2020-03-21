@@ -1,0 +1,39 @@
+>> cmd에서 tsc --init  가 시행이 안되어서 찾아봤당. 
+
+'~은(는) 내부 또는 외부 명령, 실행할 수 없는 프로그램, 또는 배치 파일이 아닙니다.'  라고 오류
+$ npm install -g typescript : typescript를 글로벌 설치
+
+$ tsc --init       # tsconfig.json 생성
+$ code .           # vscode 열기
+있는데도 안되면 환경변수 바꿔주면 됨. 설명은 못하지만;; 파워쉘 때문이라고 하더라궁.
+
+>>흠 궁금한점
+C:\Users\jinay>git config --list
+
+(생략)
+core.editor="C:\\Program Files\\Sublime Text 3\\subl.exe" -w
+credential.helper=manager
+user.name=mememeing
+(생략)
+
+처음에 서브라임으로 설치하고, vs code로 바꾸려고 재설치했는데 그대로네. cmd명령을 통해 바꿔주자.
+git config --global core.editor "code --wait" ?? 안되길래
+그냥 설치파일 지우고 폴더까지 지우고 재설치했다. 그러니까 바뀌었당~~~!!!!!! 폴더에 기본경로가 있었나봄.
+
+흠 어쩌면 GIT에서 $ git config --global core.editor vscode? 이런식으로 했음 됐으려나 
+
+
+------------------
+
+사이트
+description: " 생리학, 생물학, 그리고 중고등학교때부터 밟아온 청소년 또래상담 과정으로 지금은 코딩에 관심을 갖게 되었습니다.
+웹개발을 시작한지는 얼마 되지 않았습니다. 개인 웹에는 건강, 생활, 운동 idea들을 뉴스레터 식으로 편집하여 올릴 예정입니다.
+'의식주 +샐황(운동) 모델'을 고민하고 제안하려 합니다.
+이번 제 프로젝트는 좀더 실용성에 맞춰 target pool에 맞춰 작성될 예정입니다.
+아직 제가 아는 부분도 얕기에 일반인이 이해하기에도 괜찮지 않을까 기대하고 있습니다.
+특히 요즘과 같이 코로나로 인해 바깥생활이 제한되고 있는 상황에 필요성을 느낍니다. 기대해요! "
+
+keywords: "Lifestyle, Work Life Balance, Health, Sports medicine"
+skills: "Counslor - Web Developer - Graphic Artist - User Experience Designer - Sports Theraphy"
+meta_author: YOO JINA MEMEMEING
+
