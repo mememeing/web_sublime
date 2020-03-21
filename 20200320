@@ -1,0 +1,115 @@
+참고
+https://jekyllrb.com/docs/ 
+https://jekyllrb.com/docs/plugins/installation/
+
+https://github.com/jekyll/jekyll-admin/blob/master/README.md
+
+직접 들어가서 공부하고 있다.. 공식사이트 설명이 괜찮긴하다.그리고재밌당ㅠㅠㅠㅠㅠ
+일단 루비 설치하고, 루비 윈도우창에 갖고 놀 수 있게 MSYS2를 설치해주면 된다.(이 화면이 엄청 귀여움. 이때부터 심장뜀 ;;)
+사실 되게 쉬운게 그냥 루비만 설치하고 번들러설치는 gem install jekyll 이랑 ~~~ 몇번 더 하면 된다.
+
+설치가 완벽히 끝나면!!!
+cmd 창에서 두근두근!!!한 일이 벌어지는데
+루비도 걍 똑같다.. 윈도우에서 작업되는게 좀 특이하긴 한데 잼파일 고칠땐 비주얼스튜디오 쓰면된다.
+여기서 내가 울고싶었던 건... vs쓸 생각못하고 루비니까 딴거 있는 줄 알고 한참 돌아다녔는데, 아무도 가르쳐 준곳이 없었다.
+그렇다.. 너무 당연하기 때문에 언급조차 않한거지만... 그걸 못느낀 나는 바보다. 그치만 억울하니까 억울한 슬픈 바보.
+
+알다싶이 cmd는 유저가 디폴드값이다... 그 상태로 뒤에 쓰면 됨.
+jekyll (내가 하고픈 새로운 폴더 생성)
+cd (그 폴더명)
+jekyll serve 하면 끝이다. 근데 중간중간 설치에 시간이 꽤 소요되는 편이어따.
+(cmd에서 중단하고 싶으면 ctrl-c하라고 함. 쥬피터에서 경험해본 것이지만 cmd창 절대 나가면 안된댜....)
+
+이제 브라우저로 바로 만들어진 우리 지킬씨를 볼수 있는데, http://localhost:4000에 접속하면 보인다.
+나조차도 횡설수설하게 하고 있어서 윗 사이트 참조가 도움되겠지만, 기록을 위해... 남기자면
+번들러를 이용해서 잼파일을 설치하는 것이당.
+역시 수학문제집도 그냥 정석푸는게 낫고, 대학교재도 걍 정독하는게 답인듯이.. 차도엔 왕도란 업다.
+
+1. 번들러 설치
+gem install bundler
+2. 지킬설치
+gem install jekyll
+jekyll (폴더명)
+cd (폴더명)
+jekyll serve
+3. 로컬호스트 확인
+-------------
+4. 잼파일 수정
+5. 설치 요청
+bundle install
+6. 지킬 다시 구동
+-------------
+7. 마크다운 문법
+
+잼파일 수정은 gem 'jekyll-admin', group: :jekyll-plugins 한줄 추가
+bundle install이거 ㅎ해주면됨. 변경사항 있을때마다 걍 하느 것임...그러면 변경사항 적용된게 뜬당. 신기. 눈치빠른녀석이다.
+
+근데 버전이 달라서 문제가 생길때도 있음. 나는 4->5 가는데 애먹을뻔 했는데, 이럴땐 걍 오류코드 검색해보면 됨.
+
+[!] There was an error parsing `Gemfile`:
+[!] There was an error parsing `Gemfile`: cannot load such file --
+#  plugin 'rys-bundler', github: 'easysoftware/rys-bundler', branch: 'master'
+ >  Plugin.hook('rys-gemfile', self)
+Bundler cannot continue.
+It is caused by outdated version of redmine installer.
+Solution:
+Before installing the upgrade
+$ gem install redmine-installer
+
+ㅇㅇ 솔루션을 따르자. 그리고 다시 5번했는데
+
+안됐다. 뭐지.. ㅠㅠ 버전넘버가 안맞는거 아닌가..
+
+내일 해결해보겠다.. ㅇ일단 잼파일이 친절하게 하란대로 해봐야게다...
+
+--------------
+
+source "https://rubygems.org"
+# Hello! This is where you manage which Jekyll version is used to run.
+# When you want to use a different version, change it below, save the
+# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+#
+#     bundle exec jekyll serve
+#
+# This will help ensure the proper Jekyll version is running.
+# Happy Jekylling!
+gem "jekyll", "~> 4.0.0"
+# This is the default theme for new Jekyll sites. You may change this to anything you like.
+gem "minima", "~> 2.5"
+# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
+# uncomment the line below. To upgrade, run `bundle update github-pages`.
+# gem "github-pages", group: :jekyll_plugins
+# If you have any plugins, put them here!
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+end
+
+# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
+# and associated library.
+install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
+  gem "tzinfo", "~> 1.2"
+  gem "tzinfo-data"
+end
+
+# Performance-booster for watching directories on Windows
+gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
+
+ㅎㅇㅎㅇ 오늘은 진짜루 지킬을 뿌시고 말것이당...ㅎ 
+드디어 70년대 디스코같던 빨간 머리 색이 적당히 빠져, 핑크퍼플+브라운 느낌의 염색으로 바꼈당.
+
+잼파일이 하란 대로 했당. revise가 add하란 소린 줄 알았는데, replace였다. 즉슨 있는거 지우고 그자리에 수정하면 됐다..
+번들 설치했는데
+
+C:\Users\jinay\mememeing>bundle exec jekyll serve
+Doing `require 'backports'` is deprecated and will not load any backport in the next major release.
+Require just the needed backports instead, or 'backports/latest'.
+Configuration file: C:/Users/jinay/mememeing/_config.yml
+                    ------------------------------------------------
+      Jekyll 4.0.0   Please append `--trace` to the `serve` command
+                     for any additional information or backtrace.
+                    ------------------------------------------------
+                    
+흠.근데 코드 살펴보니까 왠지 내 마음대로 my awesome-new-~~~이거 악ㄱ니고 내 맘대로 이름 붙여서 그런것 같아서 처음부터 다시 시행.
+
+
+
