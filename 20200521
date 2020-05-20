@@ -1,0 +1,21 @@
+//깃허브 나가기 머물기 뜨는데
+머물기 보니까 백아연-머물러요 노래 떠오름....
+
+//머신러닝기초 다질것임......ㅋㅋㅋ 웹도 하긴하는데 휘발이 넘 빠르당... 기초적인 걸 세워야지.
+
+1. 부트스트랩의 이미짇릉ㄴ 해당요소에 클래스명 .img-responsive를 사용하여 반응형으로 만들 수 있다.
+2. img-responsive클래스 명에는 max-width: 100%, height: auto;, display: block; 스타일이 들어가 있다.
+3. .img-responsive를 활용한 이미지를 가운데 두기 위해서, .text-center 대신 center-block클래스명을 사용한다.
+4. img-태그를 사용하지 않고 css를 활용하여 이미지를 넣으려면 div에 .img-responsive 클래스명을 사용하고 css에서 background-image, height와 background-size설정을 한다.
+
+모달이나 경고같은 콘텐츠를 없애기 위해서 닫기 아이콘을 생성하는 방법으로는 button태그 안에 span 태그를 주고 &times;을 넣은 후에 class 명으로 close이름을 부여한다.
+ 
+<button type="button" class="close" aria-label="close"><span aria-hidden="true">&times;</span></button>
+    
+자바스크립트에서 경보메세지 익힘
+1)버튼태그가 data-dismiss="alert" 속성을 가지고 있고
+2)부모요소에게도 class="alert"를 가지고 있으면
+자바스크립트가 동작하여 클릭했을 때 없어지도록 동작한다.
+
+17일부터 쓰던건데..... 팀플시작하고 레포트생겨서 앞으로 공부 못할듯....
+
